@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>red_laser.png</file>
+        <file>ship.png</file>
+        <file>chicken.png</file>
+        <file>chicken.jpg</file>
+    </qresource>
+</RCC>

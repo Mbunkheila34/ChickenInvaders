@@ -4,6 +4,11 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QTimer>
+#include "bullet.h"
+#include <QCoreApplication>
+#include <QObject>
+#include <QDebug>
+
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +18,15 @@ int main(int argc, char *argv[])
 
     // create an item to add to the scene
     MyRect * player = new MyRect();
-    player->setPixmap(QPixmap("C:/Users/Owner/Documents/ChickenInvaders/chicken.jpg"));
+    player->setPixmap(QPixmap(":/image/ship.png"));
+    player->score = 0;
+    player->scoreTextItem = new QGraphicsTextItem(QString("Score: 0"));
+    player->scoreTextItem->setPos(10, 10); // Set position of the text item on the scene
+    scene->addItem(player->scoreTextItem);
+    player->health = 3;
+    player->healthTextItem = new QGraphicsTextItem(QString("Health: 3"));
+    player->healthTextItem->setPos(700, 10); // Set position of the text item on the scene
+    scene->addItem(player->healthTextItem);
 
     // add the item to the scene
     scene->addItem(player);
